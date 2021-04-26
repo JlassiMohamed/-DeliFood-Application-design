@@ -46,8 +46,9 @@ Logout:
 2. When /logout is called, redirect user to the home page
 
 #Items
+
 1. Create a new Item Model with the following fields:
-Name, Description, Price
+   Name, Description, Price
 
 2. Create several in the admin or shell
 
@@ -60,19 +61,23 @@ Name, Description, Price
 5. Create more then 10 items
 
 #Pagination
+
 1. Add pagination to the items listing page, show 10 items per page
 
 #Search
+
 1. Add search box to items listing page, search uses GET and query params to generate new page. The search query uses the name and description fields.
-#Filter
+   #Filter
 1. Allow the user to filter restaurants by address. Use GET and query params. Filter by a letter in lowercase.
 
 #Json API for Items
-* Add a format query param handler to /items where if the format equals json, then the response is in json
+
+- Add a format query param handler to /items where if the format equals json, then the response is in json
 
 #Shopping cart/order
-* Create a new Model called Order (This is the shopping cart!)
-An order belongs to a user, and has multiple items. A user can have many orders. An order has a status column, which is an integer field:
+
+- Create a new Model called Order (This is the shopping cart!)
+  An order belongs to a user, and has multiple items. A user can have many orders. An order has a status column, which is an integer field:
 
 1 - In shopping cart
 
@@ -82,22 +87,25 @@ For any given user, you can only have one order with a status equal to 1.
 
 When a user adds an item to the shopping cart, if there is no order with a status equal to 1, then create a new order for the user.
 
-* Create a new route and view for /cart
-/cart shows what items are in that users cart
+- Create a new route and view for /cart
+  /cart shows what items are in that users cart
 
-* To show cart, you will need to query for the right order - match the user (request.user) and set a condition where status is equal to one.
+- To show cart, you will need to query for the right order - match the user (request.user) and set a condition where status is equal to one.
 
-* Allow user to delete items from the cart
+- Allow user to delete items from the cart
 
-* Shows the total price of all items
+- Shows the total price of all items
 
-* Allows them to purchase items, purchasing takes the user to payment form at /payments
+- Allows them to purchase items, purchasing takes the user to payment form at /payments
 
-* Update the /item/ template to have a "purchase" button - when clicked, the item is added to the order, and the user is redirected to /cart
+- Update the /item/ template to have a "purchase" button - when clicked, the item is added to the order, and the user is redirected to /cart
 
 #Payment form
-* Create a new route and template for /payments
 
-* Create a form that allows the user to enter billing info
+- Create a new route and template for /payments
 
-* On submit, the order id status changes to purchased (2)
+- Create a form that allows the user to enter billing info
+
+- On submit, the order id status changes to purchased (2)
+
+<!-- https://www.youtube.com/watch?v=Yt8XkYIdhVU -->
